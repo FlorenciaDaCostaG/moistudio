@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moi Studio | Sublimación en Montevideo</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* CONFIGURACIÓN GENERAL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden; /* Evita que se mueva para los costados */
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* ESTILO DE CADA MITAD */
+        .split {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.7s cubic-bezier(0.2, 1, 0.3, 1);
+            position: relative;
+            text-align: center;
+        }
+
+        /* LADO IZQUIERDO: MOI NEXUS (Stock) */
+        .nexus {
+            background-color: #121212; /* Fondo Negro Tech */
+            color: #ffffff;
+            border-right: 1px solid #333;
+        }
+
+        /* LADO DERECHO: MOI DESIGN (Personalizados) */
+        .design {
+            background-color: #fdfdfd; /* Fondo Blanco Limpio */
+            color: #121212;
+        }
+
+        .content {
+            z-index: 10;
+            padding: 30px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        p {
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        /* EL BOTÓN */
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 2px solid currentColor;
+            background: transparent;
+            color: currentColor;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        /* EFECTOS AL PASAR EL MOUSE (HOVER) */
+        .split:hover {
+            flex: 1.6; /* Se agranda el lado que tocas */
+        }
+
+        .nexus:hover {
+            background-color: #1a1a1a;
+        }
+
+        .design:hover {
+            background-color: #ffffff;
+        }
+
+        .btn:hover {
+            background-color: #121212;
+            color: #fff;
+            border-color: #121212;
+            transform: translateY(-5px);
+        }
+
+        .nexus .btn:hover {
+            background-color: #fff;
+            color: #000;
+            border-color: #fff;
+        }
+
+        /* AJUSTE PARA CELULARES (MONTEVIDEO MOBILE) */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Una arriba de la otra */
+            }
+            .split:hover {
+                flex: 1; /* En el cel no se agrandan para no romper el scroll */
+            }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <a href="https://wa.me/59899000000?text=Hola!%20Vengo%20de%20la%20web,%20quiero%20ver%20el%20stock%20de%20Nexus" class="split nexus">
+            <div class="content">
+                <h1>MOI NEXUS</h1>
+                <p>Stock Inmediato</p>
+                <div class="btn">Ver Catálogo</div>
+            </div>
+        </a>
+
+        <a href="https://wa.me/59899000000?text=Hola!%20Quiero%20pedir%20un%20diseño%20personalizado" class="split design">
+            <div class="content">
+                <h1>MOI DESIGN</h1>
+                <p>A Tu Medida</p>
+                <div class="btn">Crear Pedido</div>
+            </div>
+        </a>
+
+    </div>
+
+</body>
+</html>
