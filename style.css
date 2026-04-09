@@ -1,1 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body, html {
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.split {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.7s cubic-bezier(0.2, 1, 0.3, 1);
+    position: relative;
+    text-align: center;
+}
+
+.nexus {
+    background-color: #121212;
+    color: #ffffff;
+    border-right: 1px solid #333;
+}
+
+.design {
+    background-color: #fdfdfd;
+    color: #121212;
+}
+
+.content {
+    z-index: 10;
+    padding: 30px;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    border: 2px solid currentColor;
+    background: transparent;
+    color: currentColor;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.split:hover {
+    flex: 1.6;
+}
+
+.btn:hover {
+    background-color: #121212;
+    color: #fff;
+    border-color: #121212;
+    transform: translateY(-5px);
+}
+
+.nexus .btn:hover {
+    background-color: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+@media (max-width: 768px) {
+    .container { flex-direction: column; }
+    .split:hover { flex: 1; }
+}
